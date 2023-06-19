@@ -9,32 +9,33 @@ var numeric = "0123456789";
 var special = "!@#$%^&*()";
 
 function generatePassword() {  
-var passwordLength = prompt("How long do you want your password to be?");
+var passwordLength = prompt("How long do you want your password to be? (Enter a number)");
 
 if (passwordLength < 8 || passwordLength > 128) {
-  alert("Password must be between 8 and 128 chracters!")
+  alert("Password must be between 8 and 128 chracters! Press Generate Password button to try again.")
   return;
 }
 
-var includeLowerCase = prompt("Do you want your password to include lowercase characters?");
-var includeUpperCase = prompt("Do you want your password to include uppercase characters?");
-var includeNumeric = prompt("Do you want your password to include numeric characters?");
-var includeSpecial = prompt("Do you want your password to include special characters?");
+// Prompts for the user to select for generating the password, used confirm function to give the user a choice between ok or cancel. This was recommended to me by my tutor, Ramon Sanchez. I previously had the prompt function.
+var includeLowerCase = confirm("Do you want your password to include lowercase characters?");
+var includeUpperCase = confirm("Do you want your password to include uppercase characters?");
+var includeNumeric = confirm("Do you want your password to include numeric characters?");
+var includeSpecial = confirm("Do you want your password to include special characters?");
 var passwordChoice = "";
 
-if (includeLowerCase == "y") {
+if (includeLowerCase === true) {
   passwordChoice = passwordChoice.concat(lowerCase); 
 } 
 
-if (includeUpperCase == "y") {
+if (includeUpperCase === true) {
   passwordChoice = passwordChoice.concat(upperCase);
 }
 
-if (includeNumeric == "y") {
+if (includeNumeric === true) {
   passwordChoice = passwordChoice.concat(numeric);
 }
 
-if (includeSpecial == "y") {
+if (includeSpecial === true) {
   passwordChoice = passwordChoice.concat(special);
 }
 
