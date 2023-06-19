@@ -1,5 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = lowerCase.toUpperCase();
+var numeric = "0123456789";
+var special = "!@#$%^&*()";
+
 function generatePassword() {
 var passwordLength = prompt("How long do you want your password to be?");
 if (passwordLength < 8 || passwordLength > 128) {
@@ -13,6 +18,23 @@ var includeUpperCase = prompt("Do you want your password to include uppercase ch
 var includeNumeric = prompt("Do you want your password to include numeric characters?");
 
 var includeSpecial = prompt("Do you want your password to include special characters?");
+var passwordChoice = "";
+if (includeLowerCase == "y") {
+  passwordChoice = passwordChoice.concat(lowerCase); 
+} 
+if (includeUpperCase == "y") {
+  passwordChoice = passwordChoice.concat(upperCase);
+}
+if (includeNumeric == "y") {
+  passwordChoice = passwordChoice.concat(numeric);
+}
+if (includeSpecial == "y") {
+  passwordChoice = passwordChoice.concat(special);
+}
+for (let index = 0; index < passwordLength; index++) {
+  const element = array[index];
+  
+}
 }
 
 // Write password to the #password input
