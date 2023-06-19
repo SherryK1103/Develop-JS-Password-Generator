@@ -10,30 +10,34 @@ var special = "!@#$%^&*()";
 
 function generatePassword() {  
 var passwordLength = prompt("How long do you want your password to be?");
+
 if (passwordLength < 8 || passwordLength > 128) {
   alert("Password must be between 8 and 128 chracters!")
   return;
 }
+
 var includeLowerCase = prompt("Do you want your password to include lowercase characters?");
-
 var includeUpperCase = prompt("Do you want your password to include uppercase characters?");
-
 var includeNumeric = prompt("Do you want your password to include numeric characters?");
-
 var includeSpecial = prompt("Do you want your password to include special characters?");
 var passwordChoice = "";
+
 if (includeLowerCase == "y") {
   passwordChoice = passwordChoice.concat(lowerCase); 
 } 
+
 if (includeUpperCase == "y") {
   passwordChoice = passwordChoice.concat(upperCase);
 }
+
 if (includeNumeric == "y") {
   passwordChoice = passwordChoice.concat(numeric);
 }
+
 if (includeSpecial == "y") {
   passwordChoice = passwordChoice.concat(special);
 }
+
 var generatedPassword = ""
 
 for (let index = 0; index < passwordLength; index++) {
