@@ -9,12 +9,23 @@ var numeric = "0123456789";
 var special = "!@#$%^&*()";
 
 function generatePassword() {  
-var passwordLength = prompt("How long do you want your password to be? (Enter a number)");
+  var passwordLength = parseInt(
+    prompt('How many characters would you like your password to contain?'),
+    10
+  );
+  console.log(passwordLength)
+  if (Number.isNaN(passwordLength)) {
+    alert('Password length must be provided as a number');
+    return null;
+  }
 
 if (passwordLength < 8 || passwordLength > 128) {
   alert("Password must be between 8 and 128 chracters! Press Generate Password button to try again.")
   return;
 }
+
+
+
 
 // Prompts for the user to select for generating the password, used confirm function to give the user a choice between ok or cancel. This was recommended to me by my tutor, Ramon Sanchez. I previously had the prompt function.
 var includeLowerCase = confirm("Do you want your password to include lowercase characters?");
